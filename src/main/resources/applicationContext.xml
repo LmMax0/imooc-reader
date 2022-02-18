@@ -75,4 +75,25 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
     <tx:annotation-driven transaction-manager="transactionManager"/>
+<!--    配置Kaptcha-->
+    <bean id="kaptchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+        <property name="config">
+            <bean class="com.google.code.kaptcha.util.Config">
+                <constructor-arg>
+                    <props>
+<!--                        验证码不生成边框-->
+                        <prop key="kaptcha.border">no</prop>
+<!--                        生成的图片的宽度为120px-->
+                        <prop key="kaptcha.image.width">120</prop>
+<!--                        字体颜色为蓝色-->
+                        <prop key="kaptcha.textproducer.font.color">blue</prop>
+<!--                        每个字体最大占用40个像素-->
+                        <prop key="kaptcha.textproducer.font.size">40</prop>
+<!--                        验证码包含4个字符-->
+                        <prop key="kaptcha.textproducer.char.length">4</prop>
+                    </props>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
 </beans>
