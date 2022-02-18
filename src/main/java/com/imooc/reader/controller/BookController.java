@@ -3,8 +3,10 @@ package com.imooc.reader.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.imooc.reader.entity.Book;
 import com.imooc.reader.entity.Category;
+import com.imooc.reader.entity.Evaluation;
 import com.imooc.reader.service.BookService;
 import com.imooc.reader.service.CategoryService;
+import com.imooc.reader.service.EvaluationService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,8 @@ public class BookController {
     private CategoryService categoryService;
     @Resource
     private BookService bookService;
+    @Resource
+    private EvaluationService evaluationService;
 
     /**
      * 显示首页
@@ -55,8 +59,11 @@ public class BookController {
     @GetMapping("/book/{id}")
     public ModelAndView showDetail(@PathVariable("id") Long id){
         Book book = bookService.selectById(id);
+        List<Evaluation> evaluationList = evaluationService.selectByBookId(id);
+
         ModelAndView mav = new ModelAndView("/detail");
         mav.addObject("book",book);
+        mav.addObject("evaluationList",evaluationList);
         return mav;
     }
 }

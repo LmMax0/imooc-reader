@@ -182,30 +182,30 @@
             写短评
         </button>
     </div>
-<#--    <div class="reply pl-2 pr-2">-->
-<#--        &lt;#&ndash;短评列表&ndash;&gt;-->
-<#--        <#list evaluationList as evaluation>-->
-<#--        <div>-->
-<#--            <div>-->
-<#--                <span class="pt-1 small text-black-50 mr-2">${evaluation.createTime?string('MM-dd')}</span>-->
-<#--                <span class="mr-2 small pt-1">${evaluation.member.nickname}</span>-->
-<#--                <span class="stars mr-2" data-score="${evaluation.score}"></span>-->
+    <div class="reply pl-2 pr-2">
+        <#--短评列表-->
+        <#list evaluationList as evaluation>
+        <div>
+            <div>
+                <span class="pt-1 small text-black-50 mr-2">${evaluation.createTime?string('MM-dd')}</span>
+                <span class="mr-2 small pt-1">${evaluation.member.nickname}</span>
+                <span class="stars mr-2" data-score="${evaluation.score}"></span>
 
-<#--                <button type="button" data-evaluation-id="${evaluation.evaluationId}"-->
-<#--                        class="btn btn-success btn-sm text-white float-right" style="margin-top: -3px;">-->
-<#--                    <img style="width: 24px;margin-top: -5px;" class="mr-1"-->
-<#--                         src="https://img3.doubanio.com/f/talion/7a0756b3b6e67b59ea88653bc0cfa14f61ff219d/pics/card/ic_like_gray.svg"/>-->
-<#--                    <span>${evaluation.enjoy}</span>-->
-<#--                </button>-->
-<#--            </div>-->
+                <button type="button" data-evaluation-id="${evaluation.evaluationId}"
+                        class="btn btn-success btn-sm text-white float-right" style="margin-top: -3px;">
+                    <img style="width: 24px;margin-top: -5px;" class="mr-1"
+                         src="https://img3.doubanio.com/f/talion/7a0756b3b6e67b59ea88653bc0cfa14f61ff219d/pics/card/ic_like_gray.svg"/>
+                    <span>${evaluation.enjoy}</span>
+                </button>
+            </div>
 
-<#--            <div class="row mt-2 small mb-3">-->
-<#--                ${evaluation.content}-->
-<#--            </div>-->
-<#--            <hr/>-->
-<#--        </div>-->
-<#--        </#list>-->
-<#--    </div>-->
+            <div class="row mt-2 small mb-3">
+                ${evaluation.content}
+            </div>
+            <hr/>
+        </div>
+        </#list>
+    </div>
 </div>
 
 
