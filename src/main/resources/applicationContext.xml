@@ -96,4 +96,6 @@
             </bean>
         </property>
     </bean>
+<!--    开启Spring Task定时任务注解模式-->
+    <task:annotation-driven />
 </beans>

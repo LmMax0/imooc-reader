@@ -11,4 +11,6 @@ public interface EvaluationService {
      * @return 评论列表
      */
     public List<Evaluation> selectByBookId(Long bookId);
+
+
 }

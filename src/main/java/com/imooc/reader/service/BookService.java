@@ -21,4 +21,10 @@ public interface BookService {
      * @return
      */
     public Book selectById(Long bookId);
+
+    /**
+     * 更新图书评分/评价数量
+     */
+    public void updateEvaluation();
+
 }
